@@ -1,0 +1,35 @@
+<div class="container">
+  <div class="box">
+    <div class="content">
+      <div class="col-lg-12" style="padding: 30px;">
+        <h1>Document Validation</h1>
+      </div>
+
+      <div class="form">
+        <label for="signature">Siganture</label>
+        <input type="text" id="signature" [value]="generatedSignature"/>
+      </div>
+
+      <div class="form">
+        <label for="publicKey">Public Key</label>
+        <input type="text" id="publicKey" [value]="publicKey"/>
+      </div>
+
+      <div>
+        <button class="btn" (click)="convertFileToString()">Upload your document here</button>
+      </div>
+
+      <button id="vlid_btn" class="btn button-container" style="margin-top: 20px;" (click)="validate()">Validate</button>
+
+      <div *ngIf="applyValidation && verificationStatus">
+        <p style="color: rgb(86, 222, 86);"> Document is Verified</p>
+      </div>
+
+      <div *ngIf="applyValidation && !verificationStatus">
+        <p style="color: red;"> Document is not Verified</p>
+      </div>
+
+      
+    </div>
+  </div>
+</div>

@@ -1,0 +1,61 @@
+
+  <div class="flex h-screen">
+
+    <div class="w-1/2">
+      <div style="margin-top: 0.1rem" class="frame">
+        <div class="center">
+          <div class="dropzone">
+            <button id="fileInput" class="btn" (click)="convertFileToString()">Upload</button>
+          </div>
+          <div id="fileDisplay"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="w-1/2">
+      <div class="content">
+        <label class="private-label" for="priavte key">Private key</label>
+        <input
+          class="private-input"
+          id="private"
+          type="text"
+          [value]="privateKey"
+        />
+
+        <p>
+          This key is kept on your laptop or on a usb and is similar to a
+          physical key. No one has access beside you
+        </p>
+
+        <button (click)="sign()" class="btn">sign</button>
+
+        <div style="margin-top: 2rem" class="code">
+          <label class="public-label" for="public key">Public key</label>
+          <input
+            class="public-input"
+            id="public"
+            type="text"
+            [value]="publicKey"
+          />
+
+          <br />
+
+          <label class="public-code" for="public key">Code</label>
+          <input
+            style="margin-left: 4.5rem"
+            class="public"
+            id="public-code"
+            type="text"
+            [value]="generatedSignature"
+          />
+          
+
+          <p style="display: none" id="sign-code">
+            This is your encrypted code
+          </p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
